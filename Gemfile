@@ -8,6 +8,8 @@ gem 'rails', '4.1.2'
 # gem 'unicorn-rails'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.3'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
 gem 'jquery-rails'
 gem 'slim-rails'
 
@@ -20,8 +22,14 @@ end
 
 group :development do
   gem 'spring'
+  gem 'brakeman'
+  gem 'annotate'
+  gem 'bullet'
+  gem 'hirb'
+  gem 'awesome_print'
   gem 'better_errors'
   gem 'meta_request'
+  gem 'quiet_assets'
   gem 'formatted_rails_logger'
 end
 
