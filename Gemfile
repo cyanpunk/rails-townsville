@@ -4,6 +4,8 @@ gem 'pg'
 gem 'colorize'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'activerecord-session_store'
+
 gem 'rails', '4.1.2'
 gem 'unicorn-rails'
 gem 'coffee-rails', '~> 4.0.0'
