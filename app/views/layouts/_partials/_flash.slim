@@ -1,6 +1,8 @@
-- flash.each do |key, value|
-  div role='alert' class=['alert', 'alert-dismissable', flash_class(key)]
-    button type='button' class='close' data-dismiss='alert'
-      span aria-hidden='true' &times;
-      span class='sr-only' Close
-    p = value
+- if flash.any?
+  div class='container'
+    - flash.each do |key, value|
+      div role='alert' class=['alert', 'alert-dismissable', flash_class(key)]
+        button type='button' class='close' data-dismiss='alert'
+          span aria-hidden='true' &times;
+          span class='sr-only' Close
+        p = value

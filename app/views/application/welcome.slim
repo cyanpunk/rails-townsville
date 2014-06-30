@@ -1,2 +1,6 @@
-h1 Welcome
-= debug current_user
+div class='container'
+  h1 Welcome
+  - if current_account
+    p Hello, #{current_account.email} [#{link_to "Sign out", destroy_account_session_path}]!
+  - else
+    p Hello, Guest! #{link_to "Sign in", new_account_session_path}

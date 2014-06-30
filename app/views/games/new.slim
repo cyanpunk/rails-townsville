@@ -1,0 +1,5 @@
+div class='container'
+  h1 New Game
+  = link_to 'Back', request.referrer, :class => 'btn btn-default'
+  = form_for @game do |form|
+    = form.submit :class => 'btn btn-primary'

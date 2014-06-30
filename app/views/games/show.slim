@@ -1,0 +1,22 @@
+div class='container'
+  h1 Game ##{@game.id}
+  = link_to 'Back', games_path, :class => 'btn btn-default'
+  h3 Owner
+  - if @game.owner.present?
+    p #{@game.owner.email}
+  - else
+    p No owner found
+  h3 Players
+  - if @game.players.any?
+    table class='table'
+      thead
+        tr
+          td #
+          td E-mail
+      tbody
+        - @game.accounts.each do |account|
+          tr
+            td #{account.id}
+            td #{account.email}
+  - else
+    p No players found.

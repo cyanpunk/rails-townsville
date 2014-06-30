@@ -1,0 +1,28 @@
+div class='container'
+  h1 Games
+  = link_to 'New Game', new_game_path, :class => 'btn btn-default'
+  table class='table table-hover'
+    thead
+      tr
+        td #
+        td created_at
+        td updated_at
+        td creator
+        td players
+        td state
+        td actions
+    tbody
+      - @games.each do |game|
+        tr
+          td #{game.id}
+          td #{game.created_at}
+          td #{game.updated_at}
+          - if game.owner.present?
+            td #{game.owner.email}
+          - else
+            td Not defined
+          td #{game.players_count} / #{game.players_count_max}
+          td #{game.status_state}
+          td
+            = link_to 'Join', engage_game_path(game), :class => 'btn btn-xs btn-success'
+            = link_to 'View', game_path(game), :class => 'btn btn-xs btn-info'
